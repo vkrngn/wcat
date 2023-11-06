@@ -86,16 +86,28 @@ if (indexOfN != -1 && indexofB != -1) {
 }
 
 // calling of functions by evaluating fianlOptions
-if ((finalOption = "-n")) {
+if (finalOption == "-n") {
   modifyContentByN();
-} else if ((finalOption = "-b")) {
+} else if (finalOption == "-b") {
   modifyContentByB();
 }
 
-function modifyContentByN(){
-
+function modifyContentByN() {
+  console.log("This is modified by -n");
+  for (let i = 0; i < contentArr.length; i++) {
+    contentArr[i] = i + 1 + ")" + contentArr[i];
+  }
 }
 
-function modifyContentByB(){
-    
+function modifyContentByB() {
+  console.log("This is modified by -b");
+  let count = 1;
+  for (let i = 0; i < contentArr.length; i++) {
+    if (contentArr[i] != "") {
+      contentArr[i] = count + ")" + contentArr[i];
+      count++;
+    }
+  }
 }
+
+console.log(contentArr);
