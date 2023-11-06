@@ -27,7 +27,8 @@ for (let i = 0; i < filesArr.length; i++) {
   let fileExist = fs.existsSync(filesArr[i]);
   if (!fileExist) {
     console.log("File does not exist.");
-    return;
+    // return;
+    process.exit();
   }
 }
 
